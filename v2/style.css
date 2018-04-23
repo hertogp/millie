@@ -1,6 +1,25 @@
+/* VARIABLES */
 
 :root {
+--main-fg: #fff;  /* white */
+--main-bg: #333;  /* dark grey */
 
+--section-bg: #f4f4f4;
+--section-fg: #333;
+
+--hover-fg: #123;
+--hover-bg: #999;
+
+--box-fg: #333;
+--box-bg: #f4f4f4;  /* light grey */
+
+--btn-fg: #fff;
+--btn-bg: #333;
+
+--nav-text-fg: #f1f1f1;
+--nav-text-bg: #666;
+--nav-color: orange;
+--nav-hover: #f1f1f1;
 }
 
 * {
@@ -8,96 +27,249 @@
     padding: 0;
 }
 
+/* CORE STYLES */
 body {
-  margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background: #333;
-  color: #fff;
-  font-size: 1.1em;
-  line-height: 1.5;
-  text-align: center;
+  background: var(--main-bg);
+  color: var(--main-fg);
+  line-height: 1.2;
 }
-
 img {
   display: block;
   width: 100%;
   height: auto;
 }
-
-h1,
-h2,
+h1, h2, h3 {
+  margin: 0;
+  padding: 2rem 1rem 1rem 1rem;
+}
 h3 {
-  margin: 0;
-  padding: 1em 0;
+  padding: 1.2rem 0;
 }
-
 p {
-  margin: 0;
-  padding: 1em;
+  padding: 0.5rem 1rem 1rem 1rem;
 }
-
 .btn {
   display: inline-block;
-  background: #333;
-  color: #fff;
+  background: var(--btn-bg);
+  color: var(--btn-fg);
   text-decoration: none;
-  padding: 1em 2em;
+  padding: 1em;
   border: 1px solid #666;
-  margin: 1.5em 0;
+  margin-top: 1.5rem;
 }
 .btn:hover {
-  background: #eaeaea;
-  color: #333;
+    /*
+  color: var(--hover-fg);
+  background: var(--hover-bg);
+  */
+  box-shadow: 1px 2px 2px 0px silver;
+}
+
+
+/* NAVIGATION
+ * - uses px rather than rem for accurate placements
+ * */
+ul.nav-steps {
+    list-style: none;
+    position: fixed;
+    right: 1.5rem;
+    top: 60px;
+    opacity: 1;
+    transition: opacity 2s ease,
+        background 2s ease,
+        color: 2s ease;
+}
+ul.nav-steps:hover {
+    opacity: 1;
+}
+ul.nav-steps:before {
+    /* vertical line from ul itself */
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 0px;
+    border-right: 1px solid var(--nav-color);
+    right: -16px;
+    top: 0px;
+}
+ul.nav-steps li {
+    /* spacing of li-items */
+    text-align: right;
+    margin: 3rem 0rem;
+    position: relative;
+    height: 1.5rem;
+    padding: 0.5rem;
+}
+ul.nav-steps a {
+    /* links provide lineto, bullets, click-effect */
+    position: relative;
+    text-decoration: none;
+    color: transparent;
+    background: transparent;
+    text-align: center;
+    display: inline-block;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    border-radius: 8px;
+    padding: 4px 8px;
+}
+ul.nav-steps a:hover {
+    color: var(--btn-fg); /* transparent; */
+    background: var(--btn-bg); /* transparent; */
+    border-left: 1px solid var(--nav-color);
+    border-right: 1px solid var(--nav-color);
+}
+ul.nav-steps li a:after {
+    /* bullets */
+    position: absolute;
+    box-sizing: border-box;
+    background-color: orange;
+    content: '';
+    opacity: 1;
+    width: 9px;
+    height: 9px;
+    border: 4px solid orange;
+    border-radius: 50%;
+    right: -29px;
+    top: 8px;
+}
+ul.nav-steps li a:hover:after {
+    /* bullets on hover */
+    background-color: var(--nav-hover);
+    border: 1px solid var(--nav-color);
+    opacity: 1;
+}
+ul.nav-steps li a:active {
+    /* link drop effect */
+    top: 3px;
+}
+ul.nav-steps li a:before {
+    /* lineto bullets */
+    position: absolute;
+    content: '';
+    width: 19px;
+    height: 0px;
+    border-top: 1px solid transparent;
+    right: -20px;
+    top: 12px;
+}
+ul.nav-steps li a:hover:before {
+    border-top: 1px solid var(--nav-color);
 }
 
 
 /* SHOWCASE */
-
-
 #showcase {
-  min-height: 450px;
+  height: 100vh;
+  width: 100vw;
   color: #fff;
   text-align: center;
 }
-
 #showcase .bg-image {
+  /* separate div for bg-image so opacity can be applied to the image*/
   position: absolute;
-  background: #333 url("img/showcase.jpeg");
-  background-position: center;
+  background: #333 url("img/showcase.jpg");
+  background-position: bottom right;
   background-repeat: no-repeat;
+  height: 100vh;
+  width: 100vw;
   background-size: cover;
-  width: 100%;
-  height: 450px;
   z-index: -1;
-  opacity: 0.7;
+  opacity: 0.4;
 }
-
 #showcase h1 {
-  padding-top: 100px;
+  padding-top: 3rem;
   padding-bottom: 0;
 }
-
-#showcase .content-wrap,
-#section-a .content-wrap {
-  padding: 0 1.5em;
+#showcase .content-wrap {
+  padding: 0 1rem;
 }
 
 /* SECTION A */
 #section-a {
-  background: #fff;
-  padding: 0 0rem;
-  margin: 0;
-  color: #333;
+  background: var(--section-bg);
+  color: var(--section-fg);
+  padding-bottom: 1rem;
 }
-
 #section-a ul {
-  list-style: none;
-  text-align: left;
-  margin: 0 auto;
-  padding: 0.3em;
-  border: 1px solid silver;
-  background: #eaeaea;
-  color: #666;
+    padding: 1rem 1.2rem;
+    list-style: none;
+}
+#section-a li:before {
+    /* TODO: check fontawesome is actually showing up on mobile phone.. */
+    content: "\f00c";  /* caret left */
+    content: "\f0da";  /* checkmark */
+    content: "\f006";  /* star open */
+    content: "\f005";  /* star solid */
+    font-family: 'FontAwesome';
+    font-size: 0.8rem;
+    padding-right: 0.5rem;
+    color: #030;  /* dark green */
+    color: #333;
+    color: #0d3300;  /* darker green */
 }
 
+
+/* SECTION B */
+#section-b {
+    background: var(--section--fg);
+    color: var(--section-bg);
+    padding-bottom: 1rem;
+}
+
+/* SECTION C */
+#section-c {
+    background: var(--section-bg);
+    color: var(--section-fg);
+}
+
+/* SECTION CC */
+#section-cc {
+    padding: 1rem;
+    background: var(--section-bg);
+    color: var(--section-fg);
+}
+#section-cc ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+#section-cc li {
+    margin-bottom: 0.6rem;
+    background: #fff;
+    color: #333;
+}
+/* last p elm in section
+#section-cc p { padding: 1rem 0.5rem; }
+*/
+.card {
+    margin-bottom: 1rem;
+}
+.card-content {
+    padding: 1rem;
+}
+
+/* SECTION D */
+#section-d {
+    background: var(--section--fg);
+    color: var(--section-bg);
+    padding-bottom: 1rem;
+}
+
+
+/* FOOTER */
+footer {
+    background: #111;
+    color: #ccc;
+    font-size: 0.8rem;
+    text-align: center;
+    padding-bottom: 1rem;
+}
+#footer-logo {
+    height: 48px;
+    width: auto;
+    padding: 0 0 1rem 0;
+    margin: 0 auto;
+}
 
