@@ -49,6 +49,9 @@ h3 {
 p {
   padding: 0.5rem 1rem 1rem 1rem;
 }
+ul {
+    list-style: none;
+}
 .btn {
   display: inline-block;
   background: var(--btn-bg);
@@ -273,3 +276,63 @@ footer {
     margin: 0 auto;
 }
 
+/* Media Queries for wider screens */
+
+@media (min-width: 700px) {
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr repeat(2, minmax(auto, 26rem)) 1fr;
+    }
+
+    .content-wrap,
+    #section-cc ul.cards,
+    #section-cc p {
+        grid-column: 2/4;
+    }
+
+    .content-title {
+        text-align: center;
+    }
+    .content-text {
+        columns: 2;
+        column-gap: 2rem;
+    }
+    p {
+        padding-top: 0;
+    }
+
+    #section-c .content-text {
+        text-align: center;
+    }
+
+    #section-cc {
+        grid-column: 2/4;
+    }
+
+    #section-cc ul.cards {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+    }
+    #section-cc ul.cards > li {
+        width: 31%;
+        box-shadow: 2px 3px 3px silver;
+    }
+    #section-cc p {
+        text-align: center;
+        padding-top: 2rem;
+        font-weight: bolder;
+    }
+
+    #section-d .content-text {
+        columns: 2;
+    }
+
+    footer .content-wrap {
+        columns: 2;
+        display: flex;
+        justify-content: space-around;
+    }
+
+
+}
