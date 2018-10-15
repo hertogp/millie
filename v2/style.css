@@ -2,7 +2,7 @@
 
 :root {
 --main-fg: #fff;  /* white */
---main-bg: #333;  /* dark grey */
+--main-bg: #fbfbfb; /* light grey */
 
 --section-bg: #f4f4f4;
 --section-fg: #333;
@@ -20,6 +20,8 @@
 --nav-text-bg: #666;
 --nav-color: black;
 --nav-hover: #f1f1f1;
+
+--max-width: 992px;
 }
 
 * {
@@ -216,7 +218,7 @@ ul.nav-steps li a:hover:before {
 
 /* SECTION B */
 #section-b {
-    background: var(--section--fg);
+    background: var(--section-fg);
     color: var(--section-bg);
     padding-bottom: 1rem;
 }
@@ -255,7 +257,7 @@ ul.nav-steps li a:hover:before {
 
 /* SECTION D */
 #section-d {
-    background: var(--section--fg);
+    background: var(--section-fg);
     color: var(--section-bg);
     padding-bottom: 1rem;
 }
@@ -276,15 +278,39 @@ footer {
     margin: 0 auto;
 }
 
+/* Typical breakpoints for screens on different devices:
+ * @media only screen and
+ *  (max-width: 600px)  = xtra small: phones 600px and down
+ *  (min-width: 600px)  = small     : portrait tablets, large phones 600px & up
+ *  (min-width: 768px)  = medium    : landscape tablets 768px & up
+ *  (min-width: 992px)  = large     : laptops/desktops 992px & up
+ *  (min-width: 1200px) = xtra large: laptops/desktops
+ */
+
 /* Media Queries for wider screens */
 
-@media (min-width: 700px) {
+@media (min-width: 768px) {
     body {
+    }
+
+    /* to get margins left/right of content */
+    main, header, footer {
+        max-width: var(--max-width);
+        margin: 0 auto;
+        border-radius: 0.2em;
+        /* box-shadow: 8px 0px 3px rgba(111,111,111,0.6); */
+        box-shadow: 3px 4px 5px 3px silver;
     }
 
     .grid {
         display: grid;
-        grid-template-columns: 1fr repeat(2, minmax(auto, 48rem)) 1fr;
+        grid-template-columns: 1fr repeat(2, minmax(auto, 528px)) 1fr;
+    }
+
+    #showcase .bg-image {
+        /* position is absolute, so width=100% is relative to body and wont
+         * work */
+        width: var(--max-width);
     }
 
     .content-wrap,
