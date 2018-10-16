@@ -271,6 +271,21 @@ footer {
     text-align: center;
     padding-bottom: 1rem;
 }
+footer a {
+    color: #ccc;
+    text-decoration: none;
+    font-style: italic;
+    text-decoration: underline;
+}
+footer a:hover {
+    cursor: pointer;
+}
+footer a:visited {
+    color: #aaa;
+    color: #555;
+}
+
+
 #footer-logo {
     height: 48px;
     width: auto;
@@ -362,7 +377,7 @@ footer {
     }
 
     #main-footer .footer-content {
-        padding-top: 2rem;
+        padding-top: 1rem;
         display: flex;
         justify-content: space-around;
         align-items: center;
