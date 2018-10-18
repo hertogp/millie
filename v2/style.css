@@ -73,123 +73,83 @@ ul {
 
 
 /* NAVIGATION
- * - uses px rather than rem for accurate placements
  * */
-ul.nav-steps {
-    list-style: none;
-    position: fixed;
-    right: 1.5rem;
-    top: 60px;
-    opacity: 1;
-    transition: opacity 2s ease,
-        background 2s ease,
-        color: 2s ease;
+nav {
+    position: fixed;  /* top left */
+    top: 5px;
+    left: 5px;
+    z-index: 1;       /* always visible */
+    opacity: 0.8;
 }
-ul.nav-steps:hover {
-    opacity: 1;
+nav svg {
+    width: 18px;
+    height: 20px;
 }
-ul.nav-steps:before {
-    /* vertical line from ul itself */
-    content: '';
-    position: absolute;
-    height: 100%;
-    width: 0px;
-    border-right: 1px solid var(--nav-color);
-    right: -16px;
-    top: 0px;
+
+nav .nav-items {
+    display: none;  /* only show when hovering */
+    flex-flow: column nowrap;
+    color: white;
+    font-family: arial, sans-serif;
+    background: black;
+    padding: 0;
+    margin: 0 1em;
+    width: 100px;
+    opacity: 0.9;
 }
-ul.nav-steps li {
-    /* spacing of li-items */
-    text-align: right;
-    margin: 3rem 0rem;
-    position: relative;
-    height: 1.5rem;
-    padding: 0.5rem;
-}
-ul.nav-steps a {
-    /* links provide lineto, bullets, click-effect */
-    position: relative;
+nav a {
     text-decoration: none;
-    color: transparent;
-    background: transparent;
-    text-align: center;
+    color: #fefefe;
+    margin: 0;
+    padding: 0.2em 1em;
     display: inline-block;
-    border-left: 1px solid transparent;
-    border-right: 1px solid transparent;
-    border-radius: 8px;
-    padding: 4px 8px;
 }
-ul.nav-steps a:hover {
-    color: var(--btn-fg); /* transparent; */
-    background: var(--btn-bg); /* transparent; */
-    border-left: 1px solid var(--nav-color);
-    border-right: 1px solid var(--nav-color);
+nav a:hover {
+    background: #999;
+    /* border: 1px solid white; */
 }
-ul.nav-steps li a:after {
-    /* bullets */
-    position: absolute;
-    box-sizing: border-box;
-    background-color: var(--nav-color);
-    content: '';
-    opacity: 1;
-    width: 9px;
-    height: 9px;
-    border: 4px solid var(--nav-color);
-    border-radius: 50%;
-    right: -29px;
-    top: 8px;
+
+/* make menu items appear when hovering the hamburger and keep
+ * showing it when hovering the menu items themselves
+ */
+nav:hover .nav-items,
+nav:hover .nav-items:hover {
+    display: flex;
 }
-ul.nav-steps li a:hover:after {
-    /* bullets on hover */
-    background-color: var(--nav-hover);
-    border: 1px solid var(--nav-color);
-    opacity: 1;
-}
-ul.nav-steps li a:active {
-    /* link drop effect */
-    top: 3px;
-}
-ul.nav-steps li a:before {
-    /* lineto bullets */
-    position: absolute;
-    content: '';
-    width: 19px;
-    height: 0px;
-    border-top: 1px solid transparent;
-    right: -20px;
-    top: 12px;
-}
-ul.nav-steps li a:hover:before {
-    border-top: 1px solid var(--nav-color);
-}
+
 
 
 /* SHOWCASE */
 #showcase {
   height: 100vh;
   width: 100vw;
-  color: #fff;
+  color: #000;
   text-align: center;
 }
 #showcase .bg-image {
   /* separate div for bg-image so opacity can be applied to the image*/
   position: absolute;
-  background: #333 url("img/showcase.jpg");
-  background-position: bottom right;
+  background: #333 url("img/showcase-03-medium.jpeg");
+  background-position: center;
   background-repeat: no-repeat;
   height: 100vh;
   width: 100vw;
   background-size: cover;
   z-index: -1;
-  opacity: 0.4;
+  opacity: 0.93;
 }
 #showcase h1 {
   padding-top: 3rem;
   padding-bottom: 0;
 }
+/* modify these to fit the showcase image if it changes */
 #showcase .content-wrap {
-  padding: 0 1rem;
+  padding: 2rem 1rem;
 }
+#showcase .btn {
+    margin-top: 1rem;
+}
+
 
 /* SECTION A */
 #section-a {
@@ -261,7 +221,12 @@ ul.nav-steps li a:hover:before {
     color: var(--section-bg);
     padding-bottom: 1rem;
 }
-
+#section-d .face {
+    height: 120px;
+    width: auto;
+    float: left;
+    padding: 0 1em;
+}
 
 /* FOOTER */
 footer {
@@ -289,7 +254,7 @@ footer a:visited {
 #footer-logo {
     height: 48px;
     width: auto;
-    padding: 0 0 1rem 0;
+    padding: 1rem 0 1rem 0;
     margin: 0 auto;
 }
 
@@ -304,8 +269,16 @@ footer a:visited {
 
 /* Media Queries for wider screens */
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
+    html {
+    }
+
     body {
+        background-image: url(img/biesbosch-01-vangogh1.png);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position: center;
+        background-attachment: fixed;
     }
 
     /* to get margins left/right of content */
@@ -314,7 +287,7 @@ footer a:visited {
         margin: 0 auto;
         border-radius: 0.2em;
         /* box-shadow: 8px 0px 3px rgba(111,111,111,0.6); */
-        box-shadow: 3px 4px 5px 3px silver;
+        box-shadow: 2px 2px 5px 3px silver;
     }
 
     .grid {
