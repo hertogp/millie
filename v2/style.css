@@ -275,9 +275,11 @@ footer a:visited {
     body {
         background-image: url(img/biesbosch-01-vangogh1.png);
         background-repeat: no-repeat;
-        background-size: 100%;
-        background-position: stretch;
+        /* ensure background image covers all when resizing window */
+        background-size: 100vw 100vh;
+        background-position: center center;
         background-attachment: fixed;
+        background-origin: border-box;
     }
 
     /* to get margins left/right of content */
