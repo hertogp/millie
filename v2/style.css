@@ -163,10 +163,10 @@ nav:hover .nav-items:hover {
 }
 #section-a li:before {
     /* TODO: check fontawesome is actually showing up on mobile phone.. */
-    content: "\f00c";  /* caret left */
-    content: "\f0da";  /* checkmark */
-    content: "\f006";  /* star open */
-    content: "\f005";  /* star solid */
+    content: '\f005';  /* star solid */
+    content: '\f006';  /* star open */
+    content: '\f00c';  /* checkmark */
+    content: '\f0da';  /* closed triangle */
     font-family: 'FontAwesome';
     font-size: 0.8rem;
     padding-right: 0.5rem;
