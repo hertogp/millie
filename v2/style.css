@@ -40,6 +40,8 @@ img {
   display: block;
   width: 100%;
   height: auto;
+  /* remove image save-as & prevent dragging etc.. */
+  pointer-events: none;
 }
 h1, h2, h3 {
   margin: 0;
@@ -129,7 +131,7 @@ nav:hover .nav-items:hover {
 #showcase .bg-image {
   /* separate div for bg-image so opacity can be applied to the image*/
   position: absolute;
-  background: #333 url("img/showcase-03-medium.jpeg");
+  background: #333 url("img/showcase.jpeg");
   background-position: center;
   background-repeat: no-repeat;
   height: 100vh;
@@ -273,7 +275,7 @@ footer a:visited {
     }
 
     body {
-        background-image: url(img/biesbosch-01-vangogh1.png);
+        background-image: url(img/bg-image.png);
         background-repeat: no-repeat;
         /* ensure background image covers all when resizing window */
         background-size: 100vw 100vh;
