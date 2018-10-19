@@ -249,12 +249,11 @@ footer a:visited {
     color: #aaa;
     color: #555;
 }
-
-
 #footer-logo {
     height: 48px;
     width: auto;
     padding: 1rem 0 1rem 0;
+    /* small screen auto for left/right */
     margin: 0 auto;
 }
 
@@ -277,7 +276,7 @@ footer a:visited {
         background-image: url(img/biesbosch-01-vangogh1.png);
         background-repeat: no-repeat;
         background-size: 100%;
-        background-position: center;
+        background-position: stretch;
         background-attachment: fixed;
     }
 
@@ -286,8 +285,11 @@ footer a:visited {
         max-width: var(--max-width);
         margin: 0 auto;
         border-radius: 0.2em;
-        /* box-shadow: 8px 0px 3px rgba(111,111,111,0.6); */
-        box-shadow: 2px 2px 5px 3px silver;
+        /* box shadow only to the right */
+        box-shadow: 10px 0px  5px rgba(0,0,0,0.6);
+        moz-box-shadow: 10px 0px  5px  rgba(0,0,0,0.6);
+        webkit-box-shadow: 10px 0px  5px  rgba(0,0,0,0.6);
+        -o-box-shadow: 10px 0px  5px  rgba(0,0,0,0.6);
     }
 
     .grid {
@@ -344,11 +346,14 @@ footer a:visited {
         font-weight: bolder;
     }
 
+
     /* FOOTER */
-    #main-footer img {
+
+
+    #footer-logo {
+        /* wider screens, auto margin for top/bottom */
         margin: auto 0;
     }
-
     #main-footer .footer-content {
         padding-top: 1rem;
         display: flex;
