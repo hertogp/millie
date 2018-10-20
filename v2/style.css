@@ -164,16 +164,11 @@ nav:hover .nav-items:hover {
     list-style: none;
 }
 #section-a li:before {
-    /* TODO: check fontawesome is actually showing up on mobile phone.. */
-    content: '\f005';  /* star solid */
-    content: '\f006';  /* star open */
-    content: '\f00c';  /* checkmark */
-    content: '\f0da';  /* closed triangle */
-    font-family: 'FontAwesome';
-    font-size: 0.8rem;
+    content: '\f0da';  /* caret right */
+    font-family: 'Font Awesome 5 Free';
+    /* needed for solid icons to show up */
+    font-weight: 900;
     padding-right: 0.5rem;
-    color: #030;  /* dark green */
-    color: #333;
     color: #0d3300;  /* darker green */
 }
 
