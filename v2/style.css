@@ -270,7 +270,7 @@ footer a:visited {
     }
 
     body {
-        background-image: url(img/bg-image.png);
+        background-image: url(img/body-image.jpeg);
         background-repeat: no-repeat;
         /* ensure background image covers all when resizing window */
         background-size: 100vw 100vh;
