@@ -140,16 +140,13 @@ nav:hover .nav-items:hover {
   z-index: -1;
   /* opacity: 1; */
 }
-#showcase h1 {
-  padding-top: 3rem;
-  padding-bottom: 0;
-}
+
 /* modify these to fit the showcase image if it changes */
 #showcase .content-wrap {
-  padding: 2rem 1rem;
+  padding: 1rem 1rem;
 }
 #showcase .btn {
-    margin-top: 1rem;
+    margin-top: 5rem;
 }
 
 
@@ -320,6 +317,14 @@ footer a:visited {
          * work */
         width: var(--max-width);
     }
+
+    #showcase .content-wrap {
+      padding: 5rem 1rem;
+    }
+    #showcase .btn {
+        margin-top: 5rem;
+    }
+
 
     .content-wrap,
     #section-cc ul.cards,
