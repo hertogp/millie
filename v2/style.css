@@ -21,7 +21,7 @@
 --nav-color: black;
 --nav-hover: #f1f1f1;
 
---max-width: 992px;
+--max-width: 1024px;
 }
 
 * {
@@ -251,30 +251,28 @@ footer a:visited {
     margin: 0 auto;
 }
 
-/* Typical breakpoints for screens on different devices:
- * @media only screen and
- *  (max-width: 600px)  = xtra small: phones 600px and down
- *  (min-width: 600px)  = small     : portrait tablets, large phones 600px & up
- *  (min-width: 768px)  = medium    : landscape tablets 768px & up
- *  (min-width: 992px)  = large     : laptops/desktops 992px & up
- *  (min-width: 1200px) = xtra large: laptops/desktops
- */
+/* Media Queries for different screen sizes
+ * Design is mobile first, so first alt screen is tablet, portrait
+ * Landscape tablets fall into larger screen category, so we handle
+ * only tablets in portrait orientation
+*/
 
-/* Media Queries for wider screens */
+@media (min-width: 600px) and (max-width: 992px) {
+    /* tablets, portrait */
+    #showcase .content-wrap {
+        font-size: larger;
+        padding: 70px 0;
+    }
+    #showcase .btn {
+        margin-top: 0px;
+    }
+}
 
 @media (min-width: 992px) {
+    /* all other larger screen sizes */
     html {
     }
 
-    /* body { */
-    /*     background-image: url(img/body-image.jpeg); */
-    /*     background-repeat: no-repeat; */
-    /*     /1* ensure background image covers all when resizing window *1/ */
-    /*     background-size: 100vw 100vh; */
-    /*     background-position: center center; */
-    /*     background-attachment: fixed; */
-    /*     background-origin: border-box; */
-    /* } */
     body {
         position: relative;
     }
