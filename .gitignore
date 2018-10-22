@@ -19,7 +19,8 @@ scr/
 tmp/
 venv/
 pd-images/
-
+v4/
+v5/
 # Packages
 *.egg
 *.egg-info
